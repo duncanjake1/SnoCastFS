@@ -71,8 +71,9 @@ MIDDLEWARE = [
 ]
 
 # Allows the frontend (running on localhost:3000) to get data from python server
-CORS_ORIGIN_WHITELIST = [
-   'http://localhost:3000'
+CORS_ALLOWED_ORIGINS = [
+   'http://localhost:3000',
+   'https://snocast-practice.herokuapp.com'
 ]
 
 ROOT_URLCONF = 'snocast_api.urls'

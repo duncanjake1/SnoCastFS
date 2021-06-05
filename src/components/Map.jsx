@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
-import GoogleMap from 'google-map-react'
+import React, { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet'
 
 import './styles/map.css'
@@ -10,7 +9,7 @@ const Map = () => {
     const [reportData, setReportData] = useState(false)
 
     // grab data from db
-    const url = 'http://127.0.0.1:8000/api/accidents/'
+    const url = '/api/accidents/'
 
     useEffect(async () => {
         const response = await fetch(url)
@@ -30,13 +29,11 @@ const Map = () => {
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
 
-                    {/* render map pins once the data has been fetched from server */}
                     {reportData && reportData.map(report =>
                         <Marker
-                            position={[report.Lat, report.Long]}
-                            onClick={console.log('clicked', report.Name)}>
+                            position={[report.latitude, report.longitude]}>
                             <Tooltip>
-                                {report.Name}
+                                {report.summary_description}
                             </Tooltip>
                         </Marker>
                     )}
