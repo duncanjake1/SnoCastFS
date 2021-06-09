@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet'
+import axios from 'axios';
 
 import './styles/map.css'
 
@@ -12,10 +13,9 @@ const Map = () => {
     const url = '/api/accidents/'
 
     useEffect(async () => {
-        const response = await fetch(url)
-            .then(result => result.json())
-        setReportData(response)
-        console.log(response)
+        const response = await axios
+            .get(url)
+            .then(result => setReportData(result.data))
     }, [])
 
     return (
