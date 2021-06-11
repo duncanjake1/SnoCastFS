@@ -43,3 +43,12 @@ SQLite database:
     audio_url
     pub_date
 
+
+Update Heroku Database from local machine:
+(while in root directory)
+
+python manage.py dumpdata fixtures/podcast_data_dump.json
+git add .
+git commit -m "message"
+git push heroku master
+heroku run python manage.py loaddata fixtures/podcast_data_dump.json
