@@ -15,19 +15,14 @@
   padding: 20px;
 }
 
-.report-header {
-  padding-bottom: 20px;
-}
-
 .source-logo {
   max-width: 200px;
   height: auto;
 }
 
-.audio-div {
-  background-color: darkcyan;
+#audio-div{
+  margin-top: 20px;
 }
-
 audio {
   width: 100%;
 }

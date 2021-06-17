@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import MapMarker from './MapMarker.jsx'
 import axios from 'axios';
 
@@ -17,7 +17,6 @@ const Map = () => {
         const response = await axios
             .get(url)
             .then(result => setReportData(result.data))
-            .then(console.log(reportData[0]))
     }, [])
 
     return (
