@@ -1,37 +1,49 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import { Marker, Tooltip } from 'react-leaflet'
 
 import { GetCastContext } from './GetCastContext'
-import './styles/mapMarker.css'
 
 const MapMarker = (props) => {
-    
-    const { setCastInfoConditions } = useContext(GetCastContext)
-    const { color, name, key } = props;
 
-    function handleClick(){
+    const { setCastInfoConditions } = useContext(GetCastContext)
+
+    const history = useHistory()
+
+    function handleClick() {
+        // gather info needed for 'getCast' page
         setCastInfoConditions({
-            url: props.url,
-            imgUrl:props.imgUrl,
-            title: props.name,
+            key: props.key,
+            date: props.date,
+            state: props.state,
+            location: props.location,
+            primaryActivity: props.primaryActivity,
+            killed: props.killed,
+            source: props.source,
+            title: props.title,
             description: props.description,
-            source: props.source
+            audioURL: props.audioURL
+
         })
+
+        // push user to the 'getCast' route
+        history.push('/getCast')
+
+
     }
 
-    return(
-        <div>
-            <Link 
-                onClick={handleClick}
-                to={'/getCast'}>
-                <div className="pin bounce"
-                    key={key}
-                    style={{backgroundColor: color, cursor: 'pointer'}}
-                    title={name}
-                />
-                <div className="pulse" />
-            </Link>
-        </div>
+    return (
+        <Marker
+            position={[props.latitude, props.longitude]}
+            eventHandlers={{
+                click: () => {
+                    handleClick()
+                },
+            }}>
+            <Tooltip>
+                {props.title}
+            </Tooltip>
+        </Marker>
     )
 }
 export default MapMarker

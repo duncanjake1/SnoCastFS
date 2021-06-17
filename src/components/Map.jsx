@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet'
+import MapMarker from './MapMarker.jsx'
 import axios from 'axios';
 
 import './styles/map.css'
@@ -16,6 +17,7 @@ const Map = () => {
         const response = await axios
             .get(url)
             .then(result => setReportData(result.data))
+            .then(console.log(reportData[0]))
     }, [])
 
     return (
@@ -30,38 +32,22 @@ const Map = () => {
                     />
 
                     {reportData && reportData.map(report =>
-                        <Marker
-                            position={[report.latitude, report.longitude]}>
-                            <Tooltip>
-                                {report.summary_description}
-                            </Tooltip>
-                        </Marker>
+                        <MapMarker
+                            key={report.avalanche_number}
+                            latitude={report.latitude}
+                            longitude={report.longitude}
+                            date={report.date}
+                            state={report.state}
+                            location={report.location}
+                            primaryActicity={report.primary_activity}
+                            killed={report.killed}
+                            source={report.url}
+                            title={report.summary_description}
+                            description={report.html}
+                            audioURL={report.audio_url} />
                     )}
                 </MapContainer>
             </div>
-
-            {/* <div className="map-container">
-                <GoogleMap
-                    resetBoundsOnResize={true}
-                    style={{ maxWidth: '100%', height: '68vh' }}
-                    bootstrapURLKeys={{ key: API_KEY }}
-                    defaultCenter={location}
-                    defaultZoom={zoomLevel}
-                >
-
-                    {reportData && reportData.map(report => //data[0] is index for accident reports
-                        <MapMarker
-                            name={report.Name}
-                            date={report.Date}
-                            lat={report.Lat}
-                            lng={report.Long}
-                            description={report.description}
-                            pubDate={report.pubDate}
-                            color="red"
-                        />
-                    )}
-                </GoogleMap> 
-            </div> */}
         </div >
     )
 }
