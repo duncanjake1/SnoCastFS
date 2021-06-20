@@ -1,0 +1,26 @@
+/* 70vh is the height of container defined in map.css
+using 64vh here so the contianer doesn't resize (resizing is probably due to default values of margin or padding or something) */
+#spinner-container{
+   display: flex;
+   justify-content: center;
+   height: 64vh;
+}
+
+.spinningSVG{
+    margin: auto;
+    max-width: 20em;
+    fill: white;
+    animation-name: spin;
+  animation-duration: 3500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

@@ -2,6 +2,7 @@
   grid-gap: 15px;
   grid-template-areas: "info map";
   grid-template-columns: 25vw 1fr;
+  min-height: 1fr;
 }
 
 .single-container {

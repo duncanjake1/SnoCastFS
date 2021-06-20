@@ -2,13 +2,15 @@
     height: 100%;
 }
 
+/* hardcoding 68vh as container height bc I can't find another way to do it
+Definitely worth figuring out why this is and fixing it. */
 #map-container {
     grid-area: map;
     border-radius: 15px;
     background-color: rgba(91, 171, 245, 0.5);
     padding: 20px;
     padding-top: 10px;
-    min-height: 600px;
+    min-height: 70vh;
   }
 
 .leaflet-container{
