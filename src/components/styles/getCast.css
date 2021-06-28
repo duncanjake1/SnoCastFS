@@ -26,3 +26,19 @@
 audio {
   width: 100%;
 }
+
+/* setting margin left and margin right in this fashion will mess up the mobile view...
+FIX ASAP! */
+
+#info-tile{
+  margin-right: 10px;
+}
+
+#summary-tile{
+  margin-left: 10px;
+}
+
+#summary-tile{
+  background: white;
+  border: solid black 3px;
+}

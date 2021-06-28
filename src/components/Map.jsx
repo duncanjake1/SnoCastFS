@@ -16,7 +16,7 @@ const Map = () => {
     const url = '/api/accidents/'
 
     useEffect(async () => {
-        const response = await axios
+        await axios
             .get(url)
             .then(result => setReportData(result.data))
     }, [])
@@ -25,6 +25,7 @@ const Map = () => {
         <div id="map-container" className="flex-item">
             <h2 style={{ textAlign: 'center', paddingBottom: '7px' }}>{reportData ? 'Select location to receive report' : 'Loading... Please wait'}</h2>
 
+            {/* render map once data has loaded, otherwise show spinner */}
             {reportData ?
                 <div id="map">
                     <MapContainer center={[40.7607793, -111.8910474]} zoom={3} scrollWheelZoom={true}>
