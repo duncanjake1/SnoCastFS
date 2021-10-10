@@ -72,4 +72,3 @@ const GetCast = () => {
   );
 };
 export default GetCast;
-

@@ -1,4 +1,3 @@
-import { createContext } from 'react'
+import { createContext } from "react";
 
-export const GetCastContext = createContext(null)
-
+export const GetCastContext = createContext(null);

@@ -1,18 +1,17 @@
-import React from 'react'
+import React from "react";
 
-import Info from './Info.jsx'
-import Map from './Map.jsx'
+import Info from "./Info.jsx";
+import Map from "./Map.jsx";
 
-import './styles/main.css'
+import "./styles/main.css";
 
 const Main = () => {
+  return (
+    <div className="content-template main-content-grid">
+      <Info />
+      <Map />
+    </div>
+  );
+};
+export default Main;
 
-
-    return (
-        <div className="content-template main-content-grid">
-            <Info />
-            <Map />
-        </div>
-    )
-}
-export default Main

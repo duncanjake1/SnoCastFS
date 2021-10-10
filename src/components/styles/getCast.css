@@ -20,7 +20,7 @@
   height: auto;
 }
 
-#audio-div{
+#audio-div {
   margin-top: 20px;
 }
 audio {
@@ -30,15 +30,16 @@ audio {
 /* setting margin left and margin right in this fashion will mess up the mobile view...
 FIX ASAP! */
 
-#info-tile{
+#info-tile {
   margin-right: 10px;
 }
 
-#summary-tile{
+#summary-tile {
   margin-left: 10px;
 }
 
-#summary-tile{
+#summary-tile {
   background: white;
   border: solid black 3px;
 }
+
