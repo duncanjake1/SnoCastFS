@@ -32,9 +32,9 @@ const About = () => {
           Our goal at SnoCast is to make it as easy as possible to digest the
           latest information on accident reports and snow conditions, so that
           you can be as safe as possible in the backcountry! <br /> <br />
-					Welcome to the SnoCast Alpha! We are busy squashing bugs, improving
-					performance, increasing usability, and building a mobile version. 
-					Stay tuned!
+          Welcome to the SnoCast Alpha! We are busy squashing bugs, improving
+          performance, increasing usability, and building a mobile version. Stay
+          tuned!
         </p>
       </div>
       <div className="flex-container">
@@ -66,8 +66,12 @@ const About = () => {
               )}
             </a>
           </div>
-          <h2>Duncan Jacobsen</h2>
-          <h3>Frontend Web Designer</h3>
+          <div className="inner-div" style={{ marginTop: "10px" }}>
+            <h2>Duncan Jacobsen</h2>
+            <div className="name-border">
+              <h3>Frontend Engineer</h3>
+            </div>
+          </div>
           {/* <p>about me:</p> */}
         </div>
         <div className="tom-bio">
@@ -98,13 +102,15 @@ const About = () => {
               )}
             </a>
           </div>
-          <h2>Tom Chingas</h2>
-          <h3>Backend Engineer</h3>
-          {/* <p>about me:</p> */}
+          <div className="inner-div" style={{ marginTop: "10px" }}>
+            <h2>Tom Chingas</h2>
+            <div className="name-border">
+              <h3>Backend Engineer</h3>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 export default About;
-
