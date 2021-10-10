@@ -14,7 +14,7 @@ const Map = () => {
   const url = "/api/accidents/";
 
   useEffect(() => {
-    let snoCastData = localStorage.getItem("snoCastData");
+    let snoCastData = sessionStorage.getItem("snoCastData");
     if (snoCastData != null) {
       setReportData(JSON.parse(snoCastData));
     } else {
@@ -23,9 +23,9 @@ const Map = () => {
     async function getData() {
       await axios.get(url).then((result) => {
         setReportData(result.data);
-        localStorage.setItem("snoCastData", JSON.stringify(result.data));
+        sessionStorage.setItem("snoCastData", JSON.stringify(result.data));
       });
-      console.log(localStorage.getItem("snoCastData"));
+      console.log(sessionStorage.getItem("snoCastData"));
     }
   }, []);
 

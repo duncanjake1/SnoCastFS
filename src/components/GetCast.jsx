@@ -8,11 +8,16 @@ import { GetCastContext } from "./GetCastContext.jsx";
 // store 'currentCast' as object with all the necessary data to restore the page on refresh
 
 const GetCast = () => {
-  const { castInfoConditions } = useContext(GetCastContext);
-
+  let { castInfoConditions } = useContext(GetCastContext);
+	let podcastSessionStorage = sessionStorage.getItem('podcastData');	
+	if (Object.keys(castInfoConditions).length === 0 && podcastSessionStorage !== null){
+		castInfoConditions = JSON.parse(podcastSessionStorage);
+	}
+	
   const dataIsPresent = Object.keys(castInfoConditions).length !== 0;
 
   useEffect(() => {
+		// if statement prevents crash if dataIsPresent is false
     if (document.getElementById("summary-tile") !== null) {
       let elemRef = document.getElementById("summary-tile");
       let reportShadow = elemRef.attachShadow({ mode: "open" });

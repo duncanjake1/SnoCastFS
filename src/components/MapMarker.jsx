@@ -11,7 +11,7 @@ const MapMarker = (props) => {
 
   function handleClick() {
     // gather info needed for 'getCast' page
-    setCastInfoConditions({
+		let podcastData = {
       key: props.key,
       date: props.date,
       state: props.state,
@@ -22,8 +22,13 @@ const MapMarker = (props) => {
       title: props.title,
       description: props.description,
       audioURL: props.audioURL,
-    });
+    }
 
+		// set context provider	
+    setCastInfoConditions(podcastData);
+
+		// also store in sessionStorage in case user refreshes page
+		sessionStorage.setItem('podcastData', JSON.stringify(podcastData))
     // push user to the 'getCast' route
     history.push("/getCast");
   }
