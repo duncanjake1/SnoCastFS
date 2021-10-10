@@ -58,17 +58,18 @@ const ContactForm = (props) => {
               as="textarea"
               placeholder="Whats up?"
               rows={10}
-              style={{ width: "80%" }}
+              style={{ width: "40%" }}
               name="message"
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Send
-          </Button>
+          <div style={{ width: "100%" }}>
+            <Button id="send-email-button" variant="primary" type="submit">
+              Send
+            </Button>
+          </div>
         </Form>
       </div>
     </div>
   );
 };
 export default ContactForm;
-

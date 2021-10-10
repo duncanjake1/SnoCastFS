@@ -25,3 +25,9 @@
   gap: 5px;
   text-align: center;
 }
+
+#send-email-button {
+  width: 200px;
+  height: 80px;
+  font-size: 30px;
+}
