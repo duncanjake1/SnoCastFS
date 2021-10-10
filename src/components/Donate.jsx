@@ -1,16 +1,8 @@
-import React, { useState } from "react";
-import { Button } from "react-bootstrap";
-import DonatePopUp from "./DonatePopUp.jsx";
+import React from "react";
 
 import "./styles/donate.css";
 
 const Donate = () => {
-  const [donateOpen, setDonateOpen] = useState(false);
-
-  function handleClose(closed) {
-    setDonateOpen(closed);
-  }
-
   return (
     <div className="content-template single-container">
       <div className="content-header">
@@ -27,7 +19,6 @@ const Donate = () => {
             it!
           </p>
           <p>(donation ability is not currently active)</p>
-          <Button onClick={() => setDonateOpen(true)}>Donate to SnoCast</Button>
         </div>
         <div className="donate-item">
           <h2>Don't want to donate to us?</h2>
@@ -43,7 +34,6 @@ const Donate = () => {
           </ul>
         </div>
       </div>
-      {donateOpen && <DonatePopUp onClick={handleClose} />}
     </div>
   );
 };
