@@ -29,3 +29,20 @@
 .donation-header {
   margin: 10px;
 }
+
+.bordered-li {
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  border: solid #366192 2px;
+  margin: 10px;
+  height: 300px;
+  text-align: center;
+  color: black;
+  top: 50%;
+}
+
+.bordered-li:hover {
+  border: solid white 2px;
+  color: white;
+}

@@ -44,18 +44,18 @@ const Donate = () => {
             </p>
             <ul>
               <a href="https://www.americanavalancheassociation.org/donate" target="_blank" rel="noreferrer">
-                <li className="responsive-li">
-                  American Avalanche Association
+                <li className="responsive-li bordered-li">
+									<span>American Avalanche Association</span>
                 </li>
               </a>
               <a href="https://avtraining.org/donate-3/" target="_blank" rel="noreferrer">
-                <li className="responsive-li">
-								American Institute for Avalanche Research
+                <li className="responsive-li bordered-li">
+									<span>American Institute for Avalanche Research</span>
 							</li>
               </a>
               <a href="https://charity.gofundme.com/o/en/campaign/powder-blast-2020" target="_blank" rel="noreferrer">
-                <li className="responsive-li">
-									Gallatin National Forest Avalanche Center
+                <li className="responsive-li bordered-li">
+									<span>Gallatin National Forest Avalanche Center</span>
                 </li>
               </a>
             </ul>
