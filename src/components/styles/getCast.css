@@ -23,6 +23,7 @@
 #audio-div {
   margin-top: 20px;
 }
+
 audio {
   width: 100%;
 }
@@ -43,3 +44,8 @@ FIX ASAP! */
   border: solid black 3px;
 }
 
+@media only screen and (max-width: 800px) {
+  #summary-tile {
+    max-width: 300px;
+  }
+}

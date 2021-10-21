@@ -16,3 +16,9 @@ Definitely worth figuring out why this is and fixing it. */
 .leaflet-container {
   height: 93%;
 }
+
+@media only screen and (max-width: 800px) {
+  #map {
+    height: 35rem;
+  }
+}
