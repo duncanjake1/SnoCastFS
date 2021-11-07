@@ -38,11 +38,13 @@
   margin: 10px;
   height: 300px;
   text-align: center;
+  background-color: #d8edff;
+  opacity: 0.8;
   color: black;
   top: 50%;
 }
 
 .bordered-li:hover {
-  border: solid white 2px;
-  color: white;
+  border: solid black 3px;
+  background-color: white;
 }
