@@ -1,4 +1,4 @@
-#SnoCast
+# SnoCast
 
 A website designed to make snow safety information more accessible than ever
 
