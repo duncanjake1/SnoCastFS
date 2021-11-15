@@ -47,4 +47,5 @@
 .bordered-li:hover {
   border: solid black 3px;
   background-color: white;
+  font-weight: 450;
 }
